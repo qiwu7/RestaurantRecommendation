@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import db.DbConnection;
+import db.DbConnectionFactory;
 import db.mysql.MySQLConnection;
 import entity.Item;
 
@@ -23,7 +25,8 @@ import entity.Item;
 @WebServlet("/search")
 public class SearchItem extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private MySQLConnection conn = MySQLConnection.getInstance();
+	private DbConnection conn = DbConnectionFactory.getDBConnection();
+
 
 	/**
 	 * @see HttpServlet#HttpServlet()
